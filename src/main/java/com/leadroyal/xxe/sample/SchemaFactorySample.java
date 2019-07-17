@@ -10,9 +10,11 @@ import javax.xml.validation.SchemaFactory;
 
 public class SchemaFactorySample {
     public void safe() throws SAXException {
+        // 2019年7月18日00:42:28
+        // 测试环境8u191
         SchemaFactory factory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
-        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, ""); // 开启可挡回显xxe和blind-xxe
+        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, ""); // 未测试
         StreamSource source = new StreamSource(ResourceUtils.getPoc1());
         Schema schema = factory.newSchema(source);
     }
