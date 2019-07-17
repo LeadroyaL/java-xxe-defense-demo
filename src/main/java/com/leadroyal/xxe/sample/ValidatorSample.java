@@ -12,11 +12,13 @@ import java.io.IOException;
 
 public class ValidatorSample {
     public void safe() throws SAXException, IOException {
+        // 2019年7月18日00:42:28
+        // 测试环境8u191
         SchemaFactory factory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
         Schema schema = factory.newSchema();
         Validator validator = schema.newValidator();
-        validator.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-        validator.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+        validator.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, ""); // 开启可挡回显xxe和blind-xxe
+        validator.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, ""); // 疑似无影响
         StreamSource source = new StreamSource(ResourceUtils.getPoc1());
         validator.validate(source);
     }
