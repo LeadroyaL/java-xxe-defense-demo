@@ -9,11 +9,13 @@ import javax.xml.transform.stream.StreamSource;
 
 public class SAXTransformerFactorySample {
     public void safe() throws TransformerConfigurationException {
+        // 2019年7月18日00:42:28
+        // 测试环境8u191
         SAXTransformerFactory sf = (SAXTransformerFactory) SAXTransformerFactory.newInstance();
-        sf.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-        sf.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
-        StreamSource source = new StreamSource(ResourceUtils.getPoc1());
-        sf.newTransformerHandler(source);
+        sf.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, ""); // 开启可挡回显xxe和blind-xxe
+        sf.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, ""); // 未测试
+        StreamSource source = new StreamSource(ResourceUtils.getPoc3());
+        sf.newXMLFilter(source);
     }
 
     public static void test() {
