@@ -14,7 +14,7 @@ public class SchemaFactorySample {
         // 测试环境8u191
         SchemaFactory factory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
         factory.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, ""); // 开启可挡回显xxe和blind-xxe
-        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, ""); // 未测试
+        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, ""); // 疑似无影响
         StreamSource source = new StreamSource(ResourceUtils.getPoc1());
         Schema schema = factory.newSchema(source);
     }

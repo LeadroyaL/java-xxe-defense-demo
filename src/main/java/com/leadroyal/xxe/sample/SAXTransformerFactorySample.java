@@ -13,7 +13,7 @@ public class SAXTransformerFactorySample {
         // 测试环境8u191
         SAXTransformerFactory sf = (SAXTransformerFactory) SAXTransformerFactory.newInstance();
         sf.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, ""); // 开启可挡回显xxe和blind-xxe
-        sf.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, ""); // 未测试
+        sf.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, ""); // 疑似无影响
         StreamSource source = new StreamSource(ResourceUtils.getPoc3());
         sf.newXMLFilter(source);
     }
