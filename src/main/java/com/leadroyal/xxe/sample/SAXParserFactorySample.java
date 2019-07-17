@@ -12,6 +12,8 @@ import java.io.IOException;
 public class SAXParserFactorySample {
     public void safe() throws IOException, SAXException, ParserConfigurationException {
         SAXParserFactory spf = SAXParserFactory.newInstance();
+        // 2019年7月17日20:24:45
+        // 测试环境8u172
         spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可挡回显xxe和blink-xxe
         spf.setFeature("http://xml.org/sax/features/external-general-entities", false); // 可能挡回显xxe，未测试，因为在这个case里，Handler完全是自己写
         spf.setFeature("http://xml.org/sax/features/external-parameter-entities", false); // 开启可挡blink-xxe
