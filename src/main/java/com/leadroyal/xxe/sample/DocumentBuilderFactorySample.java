@@ -12,18 +12,20 @@ public class DocumentBuilderFactorySample {
     public void safe() throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         String FEATURE = null;
-        FEATURE = "http://javax.xml.XMLConstants/feature/secure-processing";
+        // 2019年7月17日20:24:45
+        // 测试环境8u172
+        FEATURE = "http://javax.xml.XMLConstants/feature/secure-processing"; // 开启可挡回显xxe和blink-xxe
         dbf.setFeature(FEATURE, true);
-        FEATURE = "http://apache.org/xml/features/disallow-doctype-decl";
+        FEATURE = "http://apache.org/xml/features/disallow-doctype-decl"; // 开启可挡回显xxe和blind-xxe
         dbf.setFeature(FEATURE, true);
-        FEATURE = "http://xml.org/sax/features/external-parameter-entities";
+        FEATURE = "http://xml.org/sax/features/external-parameter-entities"; // 开启可挡blind-xxe
         dbf.setFeature(FEATURE, false);
-        FEATURE = "http://xml.org/sax/features/external-general-entities";
+        FEATURE = "http://xml.org/sax/features/external-general-entities"; // 开启可挡回显xxe
         dbf.setFeature(FEATURE, false);
-        FEATURE = "http://apache.org/xml/features/nonvalidating/load-external-dtd";
+        FEATURE = "http://apache.org/xml/features/nonvalidating/load-external-dtd"; // 无效
         dbf.setFeature(FEATURE, false);
-        dbf.setXIncludeAware(false);
-        dbf.setExpandEntityReferences(false);
+        dbf.setXIncludeAware(false); // 无效
+        dbf.setExpandEntityReferences(false); // 无效
         DocumentBuilder builder = dbf.newDocumentBuilder();
         builder.parse(ResourceUtils.getPoc1());
     }
