@@ -11,9 +11,9 @@ public class SAXReaderSample {
         // 2019年7月18日00:42:28
         // 测试环境8u191
         SAXReader saxReader = new SAXReader();
-        saxReader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可挡回显xxe和blink-xxe
+        saxReader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可挡回显xxe和blind-xxe
         saxReader.setFeature("http://xml.org/sax/features/external-general-entities", false); // 开启可挡回显xxe
-        saxReader.setFeature("http://xml.org/sax/features/external-parameter-entities", false); // 开启可挡blink-xxe
+        saxReader.setFeature("http://xml.org/sax/features/external-parameter-entities", false); // 开启可挡blind-xxe
         org.dom4j.Document doc = saxReader.read(ResourceUtils.getPoc1());
 
     }
