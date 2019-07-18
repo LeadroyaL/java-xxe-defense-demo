@@ -85,6 +85,7 @@
 
 ```java
     DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    String FEATURE = null;
     FEATURE = "http://xml.org/sax/features/external-parameter-entities";
     dbf.setFeature(FEATURE, false);
     FEATURE = "http://xml.org/sax/features/external-general-entities";
