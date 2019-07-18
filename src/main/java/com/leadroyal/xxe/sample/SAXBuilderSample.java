@@ -12,6 +12,7 @@ public class SAXBuilderSample {
         SAXBuilder builder = new SAXBuilder();
         // 2019年7月17日20:24:45
         // 测试环境8u172
+        // 2019年7月18日11:52:21, jdom2与jdom1表现一致
         builder.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可挡回显xxe和blink-xxe
         builder.setFeature("http://xml.org/sax/features/external-general-entities", false); // 无效
         builder.setFeature("http://xml.org/sax/features/external-parameter-entities", false); // 开启可挡blink-xxe
