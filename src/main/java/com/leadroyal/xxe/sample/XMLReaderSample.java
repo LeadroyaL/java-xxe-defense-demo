@@ -11,10 +11,10 @@ import java.io.IOException;
 public class XMLReaderSample {
     public void safe() throws SAXException, IOException {
         XMLReader reader = XMLReaderFactory.createXMLReader();
-        reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-        reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
-        reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
-        reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可挡回显xxe和blind-xxe
+        reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false); // 未测试，因为默认没有回显
+        reader.setFeature("http://xml.org/sax/features/external-general-entities", false); // 未测试，因为默认没有回显
+        reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false); // 开启可挡blind-xxe
         reader.parse(new InputSource(ResourceUtils.getPoc1()));
     }
 
