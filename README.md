@@ -6,7 +6,7 @@
 
 测试方式是使用两种poc，看是否可以读取到文件，一种是使用通用实体(external-general-entity)，将文件内容打到xml的内容里，一种是使用参数实体(external-parameter-entity)，将文件内容外带。
 
-配合攻击demo食用更佳：
+配合攻击demo食用更佳：[https://github.com/LeadroyaL/java_xxe_2019](https://github.com/LeadroyaL/java_xxe_2019)
 
 ### 有效的防御方式的列表
 
