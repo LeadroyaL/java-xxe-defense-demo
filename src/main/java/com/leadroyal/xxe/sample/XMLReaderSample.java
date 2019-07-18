@@ -10,6 +10,8 @@ import java.io.IOException;
 
 public class XMLReaderSample {
     public void safe() throws SAXException, IOException {
+        // 2019年7月18日11:28:27
+        // 测试环境8u172
         XMLReader reader = XMLReaderFactory.createXMLReader();
         reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可挡回显xxe和blind-xxe
         reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false); // 未测试，因为默认没有回显

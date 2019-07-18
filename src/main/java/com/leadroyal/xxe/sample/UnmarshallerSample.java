@@ -14,6 +14,8 @@ import javax.xml.transform.sax.SAXSource;
 
 public class UnmarshallerSample {
     public void safe() throws JAXBException {
+        // 2019年7月18日11:28:27
+        // 测试环境8u172
         // 默认禁用dtd，可以挡回显xxe和blind-xxe
         Class tClass = Person.class;
         JAXBContext context = JAXBContext.newInstance(tClass);
@@ -23,6 +25,8 @@ public class UnmarshallerSample {
     }
 
     public void safe2() throws SAXException, ParserConfigurationException, JAXBException {
+        // 2019年7月18日11:28:27
+        // 测试环境8u172
         JAXBContext context = JAXBContext.newInstance(Person.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
         SAXParserFactory sax = SAXParserFactory.newInstance();
