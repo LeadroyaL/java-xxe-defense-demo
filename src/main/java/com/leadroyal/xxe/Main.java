@@ -17,5 +17,6 @@ public class Main {
         XMLInputFactorySample.test();
         XMLReaderSample.test();
         UnmarshallerSample.test();
+        UnmarshallerSample.test2();
     }
 }
