@@ -15,6 +15,13 @@ public class XMLInputFactorySample {
         xmlInputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, false); // 开启可挡回显xxe和blind-xxe
         xmlInputFactory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false); // 开启可挡回显xxe和blind-xxe
         XMLStreamReader reader = xmlInputFactory.createXMLStreamReader(ResourceUtils.getPoc1());
+        while (reader.hasNext()) {
+            int type = reader.next();
+            if (type == XMLStreamConstants.START_ELEMENT) {
+                System.out.print(reader.getAttributeValue(0) + ":");
+                System.out.println(reader.getElementText());
+            }
+        }
     }
 
     public static void test() {
