@@ -3,6 +3,7 @@ package com.leadroyal.xxe.sample;
 import com.leadroyal.xxe.ResourceUtils;
 import org.xml.sax.SAXException;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -14,7 +15,7 @@ public class DocumentBuilderFactorySample {
         String FEATURE = null;
         // 2019年7月17日20:24:45
         // 测试环境8u172
-        FEATURE = "http://javax.xml.XMLConstants/feature/secure-processing"; // 开启可挡回显xxe和blind-xxe
+        FEATURE = XMLConstants.FEATURE_SECURE_PROCESSING; // 开启可挡回显xxe和blind-xxe
         dbf.setFeature(FEATURE, true);
         FEATURE = "http://apache.org/xml/features/disallow-doctype-decl"; // 开启可挡回显xxe和blind-xxe
         dbf.setFeature(FEATURE, true);
@@ -34,7 +35,7 @@ public class DocumentBuilderFactorySample {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = dbf.newDocumentBuilder();
         String FEATURE = null;
-        FEATURE = "http://javax.xml.XMLConstants/feature/secure-processing";
+        FEATURE = XMLConstants.FEATURE_SECURE_PROCESSING;
         dbf.setFeature(FEATURE, true);
         FEATURE = "http://apache.org/xml/features/disallow-doctype-decl";
         dbf.setFeature(FEATURE, true);

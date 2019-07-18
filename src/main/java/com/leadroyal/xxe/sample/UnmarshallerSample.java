@@ -4,6 +4,7 @@ import com.leadroyal.xxe.ResourceUtils;
 import com.leadroyal.xxe.model.Person;
 import org.xml.sax.*;
 
+import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -30,14 +31,14 @@ public class UnmarshallerSample {
         JAXBContext context = JAXBContext.newInstance(Person.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
         SAXParserFactory sax = SAXParserFactory.newInstance();
-        sax.setFeature("http://javax.xml.XMLConstants/feature/secure-processing", true); // 开启可以挡回显xxe和blind-xxe
+        sax.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true); // 开启可以挡回显xxe和blind-xxe
         sax.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可以挡回显xxe和blind-xxe
         sax.setFeature("http://xml.org/sax/features/external-general-entities", false); // 未测试，因为没有回显成功
         sax.setFeature("http://xml.org/sax/features/external-parameter-entities", false); // 开启可以挡blind-xxe
         sax.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false); // 无效
         sax.setNamespaceAware(false); // 无效
         XMLReader xmlReader = sax.newSAXParser().getXMLReader();
-        xmlReader.setFeature("http://javax.xml.XMLConstants/feature/secure-processing", true); // 无效
+        xmlReader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true); // 无效
         xmlReader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true); // 开启可以挡回显xxe和blind-xxe
         xmlReader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false); // 无效
         xmlReader.setFeature("http://xml.org/sax/features/external-general-entities", false); // 未测试，因为没有回显成功
